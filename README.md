@@ -64,7 +64,42 @@
 
 *3. Скриншот страницы, которая открылась при запросе IP-адреса балансировщика.*
 
-## Решение 
+## Решение
+
+Установил Terraform и Ansible, и создал такую структуру файлов.
+
+```
+load-balancer/task-1
+|-- ansible
+|   |-- ansible.cfg
+|   `-- nginx-inst.yml
+`-- terraform
+    `-- main.tf
+```
+
+1. [ansible.cfg](task-1/ansible/ansible.cfg)
+2. [nginx-inst.yml](task-1/ansible/nginx-inst.yml)
+3. [main.tf](task-1/terraform/main.tf)
+
+```
+cd terraform
+terraform init
+terraform apply
+cd ../ansible
+ansible-playbook nginx-inst.yml
+```
+
+![](img/img-01-01.png)
+
+![](img/img-01-02.png)
+
+![](img/img-01-03.png)
+
+![](img/img-01-04.png)
+
+Решил посмотреть как работает балансировщик. По ssh подключился к удаленным машинам и изменил /var/www/html/index.nginx-debian.html на одной добавив в заголовок vm-1 в другой vm-2. Отдает ответы только с первого. Наверно, чтобы начал отдавать со второго, нужно загрузить первый.
+
+**Не забываем делать terraform destroy**
 
 ---
 
@@ -98,3 +133,11 @@
 *3. Скриншот страницы, которая открылась при запросе IP-адреса балансировщика.*
 
 ## Решение
+
+1. [main.tf](task-1/terraform/main.tf)
+2. [metadata.yaml](task-1/terraform/metadata.yaml)
+
+![](img/img-02-01.png)
+
+![](img/img-02-02.png)
+
