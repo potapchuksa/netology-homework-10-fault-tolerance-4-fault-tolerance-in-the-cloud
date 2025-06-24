@@ -1,0 +1,1 @@
+# netology-homework-10-fault-tolerance-4-fault-tolerance-in-the-cloud
