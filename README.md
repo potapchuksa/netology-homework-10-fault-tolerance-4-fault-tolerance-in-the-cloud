@@ -134,8 +134,8 @@ ansible-playbook nginx-inst.yml
 
 ## Решение
 
-1. [main.tf](task-1/terraform/main.tf)
-2. [metadata.yaml](task-1/terraform/metadata.yaml)
+1. [main.tf](task-2/terraform/main.tf)
+2. [metadata.yaml](task-2/terraform/metadata.yaml)
 
 ![](img/img-02-01.png)
 
